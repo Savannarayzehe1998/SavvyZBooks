@@ -1,0 +1,140 @@
+/* Background */
+body {
+  background-color: #D2B48C; /* Light brown/tan */
+  font-family: 'Fira Sans', sans-serif;
+}
+
+/* Headlines */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF; /* White */
+  font-family: 'Noto Serif', serif;
+  font-size: 24px;
+}
+
+/* Header */
+header {
+  color: #FFFFFF; /* White */
+  font-family: 'Noto Serif', serif;
+  font-size: 20px;
+}
+
+/* Body text */
+p {
+  color: #FFFFFF; /* White */
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 12px;
+}
+
+/* Navigation */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Footer */
+footer {
+  color: #FFFFFF; /* White */
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Anchor links */
+a {
+  color: #FFFFFF; /* White */
+  font-family: 'Noto Serif', serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #FFFFFF; /* White */
+}
+
+/* About Me Table */
+/* Create a CSS-formatted table with a header, rows, columns, and cells */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #FFFFFF;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #D2B48C;
+  color: #FFFFFF;
+}
+
+/* Gallery */
+/* Add at least two dynamic-width columns */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  margin: 5px;
+  background-color: #D2B48C;
+  color: #FFFFFF;
+  padding: 10px;
+}
+
+/* Contact Me */
+/* Create multiple rows */
+.contact .row {
+  margin-bottom: 10px;
+  background-color: #D2B48C;
+  color: #FFFFFF;
+  padding: 10px;
+}
+
+/* Homepage */
+/* Create both rows and columns */
+.homepage .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.homepage .column {
+  flex: 1;
+  margin: 5px;
+  background-color: #D2B48C;
+  color: #FFFFFF;
+  padding: 10px;
+}
+
+/* Liquid Layouts */
+/* Ensure sections resize based on browser width */
+header, nav, footer {
+  width: 100%;
+  padding: 10px;
+  background-color: #D2B48C;
+  color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+/* Responsive Design */
+/* Adjust font size for smaller screens */
+@media (max-width: 600px) {
+  header, nav, footer {
+    font-size: 14px;
+  }
+}

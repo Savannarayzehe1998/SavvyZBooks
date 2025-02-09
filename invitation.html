@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Invitation Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="js/invitation.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top">
+            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+        </div>
+    </header>
+    <section id="pageForm">
+        <form onsubmit="replaceContent(); return false;">
+            <label for="recipientName">Recipient name:</label>
+            <input type="text" name="recipientNameInput" id="recipientNameInput" placeholder="Enter your Recipient Name" />
+            <label for="hostName">Host name:</label>
+            <input type="text" name="hostNameInput" id="hostNameInput" placeholder="Enter your Name" />
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <article id="placeholderContent">
+        Hello <span id="recipientNamePlaceholder">recipientName</span>!
+        <br/><br/>
+        to volunteer for an event held on July 1st. Please respond to this email to sign up as a volunteer.
+        <br/><br/>
+        Thanks!
+        <br/><br/>
+        <span id="hostNamePlaceholder">hostName</span>
+    </article>
+    <footer>
+        Privacy Policy | Terms of Service<br>
+        © 2025 My Website. All rights reserved.<br><br>
+        <a href="index.html">Home</a> | 
+        <a href="about.html">About Me</a> | 
+        <a href="interests.html">My Interests</a> | 
+        <a href="books.html">My Favorite Books</a> | 
+        <a href="contact.html">Contact Me</a> | 
+        <a href="invitation.html">Invitation</a>
+    </footer>
+</body>
+</html>

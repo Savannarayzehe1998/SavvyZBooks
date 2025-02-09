@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up to hear about my favorite book I have read this month.</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!-- Header section with the main title -->
+    <header>
+        <h1>Contact Me</h1>
+    </header>
+    
+    <!-- Contact information section -->
+    <section class="contact">
+        <div class="row">
+            <p>Email: <a href="mailto:savannadohner@gmail.com">savannadohner@gmail.com</a></p>
+        </div>
+        <div class="row">
+            <p>Phone: 360-672-5284</p>
+        </div>
+    </section>
+    
+    <!-- Newsletter signup form section -->
+    <section class="newsletter-signup">
+        <h2>Sign up to read about my favorite read of the month</h2>
+        <!-- Updated form element with method="post" and correct action -->
+        <form action="response_page.php" method="post">
+            <!-- Fieldset to group related elements in the form -->
+            <fieldset>
+                <!-- Legend to provide a caption for the fieldset -->
+                <legend>Newsletter Signup</legend>
+                
+                <!-- Form group for the user's name -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <!-- Form group for the user's phone number -->
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <!-- Form group for the user's email address -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <!-- Form group for additional comments -->
+                <div class="form-group">
+                    <label for="comments">Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                </div>
+                
+                <!-- Form group for preferred contact method with radio buttons -->
+                <div class="form-group">
+                    <label>Preferred Contact Method:</label>
+                    <input type="radio" id="contact_email" name="contact_method" value="email" checked>
+                    <label for="contact_email">Email</label>
+                    <input type="radio" id="contact_phone" name="contact_method" value="phone">
+                    <label for="contact_phone">Phone</label>
+                </div>
+                
+                <!-- Form group for selecting favorite book genre -->
+                <div class="form-group">
+                    <label for="book_genre">Favorite Book Genre:</label>
+                    <select id="book_genre" name="book_genre">
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="science-fiction">Science Fiction</option>
+                    </select>
+                </div>
+                
+                <!-- Submit button to send the form data -->
+                <div class="form-group">
+                    <input type="submit" value="Sign Up">
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    
+    <!-- Footer section with navigation links -->
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="interests.html">Interests</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

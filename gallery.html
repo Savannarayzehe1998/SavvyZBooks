@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Favorite Books</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Style for the gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .gallery .column {
+            flex: 12%;
+            max-width: 12%;
+            padding: 5px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        /* Style for the pop-up window */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content, #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Favorite Books</h1>
+    </header>
+    <section class="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="column">
+            <img src="bookpic1.jpg" alt="A Court of Thorns and Roses" onclick="openModal(0)">
+        </div>
+        <div class="column">
+            <img src="bookpic2.jpg" alt="Fourth Wing" onclick="openModal(1)">
+        </div>
+        <div class="column">
+            <img src="bookpic3.jpg" alt="Lady of Darkness" onclick="openModal(2)">
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="interests.html">Interests</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        var slideIndex = 0;
+        var images = [
+            {src: "bookpic1.jpg", alt: "A Court of Thorns and Roses"},
+            {src: "bookpic2.jpg", alt: "Fourth Wing"},
+            {src: "bookpic3.jpg", alt: "Lady of Darkness"}
+        ];
+
+        function openModal(index) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            slideIndex = index;
+            modal.style.display = "block";
+            modalImg.src = images[slideIndex].src;
+            captionText.innerHTML = images[slideIndex].alt;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= images.length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = images.length - 1;
+            }
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            modalImg.src = images[slideIndex].src;
+            captionText.innerHTML = images[slideIndex].alt;
+        }
+    </script>
+</body>
+</html>
