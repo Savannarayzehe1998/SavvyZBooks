@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        function myFunction() {
+            alert("The form was submitted");
+        }
+        function myFunction1() {
+            alert("The form was not submitted");
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Registration</h1>
+    </header>
+    <section id="pageForm">
+        <form action="#" onsubmit="myFunction()">
+            <label for="userName">Username:</label>
+            <input type="text" name="userName" placeholder="Enter your Username" pattern="[a-zA-Z][a-zA-Z0-9-_.]{1,20}" required />
+
+            <label for="Password">Password:</label>
+            <input type="password" name="password" placeholder="Enter your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required />
+
+            <label for="passwordVerify">Verify your Password:</label>
+            <input type="password" name="passwordVerify" placeholder="Enter your Password again" required />
+
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" placeholder="Enter your First Name" />
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" placeholder="Enter your Last Name" />
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="Enter your Email Address" required />
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" name="phoneNumber" placeholder="Enter your Phone Number" pattern="^\d{4}-\d{3}-\d{4}$" required />
+
+            <label for="signUpNewsletter">Sign up for newsletter:</label>
+            <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes
+            <input type="radio" name="signUpNewsletter" value="No"> No
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+     <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="interests.html">My Interests</a></li>
+                <li><a href="gallery.html">My Favorite Books</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="invitation.html">Invitation</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+		<li><a href="registration.html">Registration</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
