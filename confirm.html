@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function displayFormData() {
+            params = new URLSearchParams(window.location.search);
+            const formData = {};
+            for (const [key, value] of params.entries()) {
+                formData[key] = value;
+                setCookie(key, value, 7);
+            }
+
+            const formDataDiv = document.getElementById("formData");
+            formDataDiv.innerHTML = "<h2>Form Data</h2>";
+            for (const key in formData) {
+                formDataDiv.innerHTML += `<p><strong>${key}:</strong> ${formData[key]}</p>`;
+            }
+        }
+
+        function displayCookieData() {
+            const formDataDiv = document.getElementById("formData");
+            formDataDiv.innerHTML = "<h2>Form Data from Cookie</h2>";
+            const cookies = document.cookie.split(';');
+            cookies.forEach(cookie => {
+                const [name, value] = cookie.split('=');
+                formDataDiv.innerHTML += `<p><strong>${name.trim()}:</strong> ${value}</p>`;
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (window.location.search) {
+                displayFormData();
+            } else {
+                displayCookieData();
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Confirmation</h1>
+    </header>
+    <section id="formData">
+        <!-- Form data will be displayed here -->
+    </section>
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="interests.html">My Interests</a></li>
+                <li><a href="gallery.html">My Favorite Books</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="invitation.html">Invitation</a></li>
+                <li><a href="registration.html">Registration</a></li>
+            </ul>
+        </nav>
+   >
+</body>
+</html>
